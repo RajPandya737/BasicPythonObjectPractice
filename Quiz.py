@@ -9,18 +9,18 @@ def main():
                 "What is the most common last name in England?"]
     answers = ["7", 
                "50", 
-               "English", 
-               "Smith"]
+               "english", 
+               "smith"]
 
     for i, v in enumerate(answers):
         q = Problem(questions[i], answers[i])
         s.push(q)
     score = 0
-    for i in range(4):
+    for i in range(s.size()):
         q = s.pop()
         print(q.get_question())
         ans = input()
-        if ans == q.get_answer():
+        if ans.lower().strip() == q.get_answer():
             print("correct")
             score+=1
         else:
@@ -28,6 +28,6 @@ def main():
     print(f"You scored {score}/4. Thank you for playing")
 
 
-    
+
 if __name__ == "__main__":
     main()
